@@ -61,7 +61,7 @@ public class LoginPageController {
 
     }
 
-    private void LoginDelivery(Delivery delivery) {
+    private void LoginDelivery(Delivery delivery) {                        // if was delivery show delivery page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../DeliveryPage/Delivery.fxml"));
         try {
@@ -74,7 +74,7 @@ public class LoginPageController {
         Stage.setScene(new Scene(loader.getRoot()));
     }
 
-    private void LoginAdmin(){
+    private void LoginAdmin(){                                   // if was Admin show Admin page
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Admin/AdminPage.fxml"));
@@ -88,7 +88,7 @@ public class LoginPageController {
         Stage.setScene(new Scene(loader.getRoot()));
 
     }
-    private void LoginClient(Client client){
+    private void LoginClient(Client client){                                   // if was Client show Client page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../client/ClientPage.fxml"));
         try {
@@ -104,7 +104,7 @@ public class LoginPageController {
 
 
     @FXML
-    private void BackBTNHandler(ActionEvent event){
+    private void BackBTNHandler(ActionEvent event){                            // back to stsrtPage
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../StartPage/StartPage.fxml"));

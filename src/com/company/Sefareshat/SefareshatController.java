@@ -40,7 +40,7 @@ public class SefareshatController {
         Add();
     }
 
-    private void Add(){
+    private void Add(){                                                       // add sefareshat to list
         SefareshList.getItems().clear();
         SefareshList.getItems().addAll(client.getSefareshList());
     }
@@ -58,7 +58,7 @@ public class SefareshatController {
             AddInfo(selected);        }
     }
 
-    private void AddInfo(Sefaresh sefaresh){
+    private void AddInfo(Sefaresh sefaresh){                               // set Sefaresh informations
         if (sefaresh.getCoffee()!=null)
             RCFLD.setText(sefaresh.getCoffee().getName());
         if (sefaresh.getRestaurant()!=null)
@@ -70,7 +70,7 @@ public class SefareshatController {
     }
 
     @FXML
-    private void OkHandler(ActionEvent event){
+    private void OkHandler(ActionEvent event){                   // sabt setare
         if(!NazarFLD.getText().isEmpty()){
             System.out.print("1");
             if(checkNumber(NazarFLD.getText())){
@@ -86,7 +86,7 @@ public class SefareshatController {
     }
 
     @FXML
-    private void LaghvHAndler(ActionEvent event){
+    private void LaghvHAndler(ActionEvent event){                                   // Cancel Sefaresh
        Sefaresh selectedSefaresh = SefareshList.getSelectionModel().getSelectedItem();
        if(selectedSefaresh!=null){
 
@@ -96,7 +96,7 @@ public class SefareshatController {
            boolean darsad50 = selectedSefaresh.getRunning50();
            boolean darsad100 = selectedSefaresh.getRunning100();
 
-           if(darsad100){
+           if(darsad100){                                                                       // cancel sefaresh befor 30 S
                int mojoodi = Integer.parseInt(client.getKifPool());
                int bazghashti = Integer.parseInt(selectedSefaresh.getFood().getMoney());
                client.setKifPool(String.valueOf(mojoodi+ (bazghashti)));
@@ -105,7 +105,7 @@ public class SefareshatController {
                if(c!=null){c.getDelivery().getListSefareshat().remove(selectedSefaresh);}
            System.out.print(darsad100+"Bazghash 100 darsad\n");}
 
-           if(darsad50 && !darsad100){
+           if(darsad50 && !darsad100){                                                           // cancle befor 60 s
                int mojoodi = Integer.parseInt(client.getKifPool());
                int bazghashti = Integer.parseInt(selectedSefaresh.getFood().getMoney());
                client.setKifPool(String.valueOf(mojoodi + ( bazghashti / 2 )));
@@ -120,7 +120,7 @@ public class SefareshatController {
     }
 
     @FXML
-    private void BackHandler(ActionEvent event){
+    private void BackHandler(ActionEvent event){                         // back to client page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../client/clientPage.fxml"));
         try {
@@ -132,6 +132,8 @@ public class SefareshatController {
         controller.initFunction(this.stage , this.client);
         stage.setScene(new Scene(loader.getRoot()));
     }
+
+
     private boolean checkNumber(String number){                           // check number
         boolean check = Pattern.matches("[0-5]{1}", number);
         System.out.print(check);

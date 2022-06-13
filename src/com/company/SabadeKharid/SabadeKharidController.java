@@ -58,7 +58,7 @@ public class SabadeKharidController {
     }
 
     @FXML
-    private void OkHandle(ActionEvent event){
+    private void OkHandle(ActionEvent event){                           // add code takhfif
         if(Tedad==0) {
             Tprice = 0;
             if (!CodeTakhfif.getText().isEmpty()) {
@@ -89,7 +89,7 @@ public class SabadeKharidController {
 
 
     @FXML
-    private void PardakhtHadler(ActionEvent e){
+    private void PardakhtHadler(ActionEvent e){                          // pardakht sabade kharid
 
         if(client.getKifPool()!=null){
 
@@ -101,17 +101,17 @@ public class SabadeKharidController {
             client.setKifPool(String.valueOf(baghimande));
 
             for(int i=0 ; i<client.getSabadeKharid().size() ; i++){
-                client.getSabadeKharid().get(i).StartHandler();
+                client.getSabadeKharid().get(i).StartHandler();                   // add to sabadekharide client
                 client.setSefareshList(client.getSabadeKharid().get(i));
                 Coffee C = client.getSabadeKharid().get(i).getCoffee();
                 Restaurant R = client.getSabadeKharid().get(i).getRestaurant();
-                if(C!=null){C.getDelivery().getListSefareshat().add(client.getSabadeKharid().get(i));}
+                if(C!=null){C.getDelivery().getListSefareshat().add(client.getSabadeKharid().get(i));} // add sefaresh to delivery
                 if(R!=null){R.getDelivery().getListSefareshat().add(client.getSabadeKharid().get(i));}
             }
 
-            for(int i=0 ; i<client.getSefareshList().size() ; i++){
+           /* for(int i=0 ; i<client.getSefareshList().size() ; i++){
                System.out.print(client.getSefareshList().get(i) + "\n");
-            }
+            } */
 
             client.getSabadeKharid().clear();
             AddToSabadList();
@@ -128,7 +128,7 @@ public class SabadeKharidController {
 
     }
     @FXML
-    private void BackHandler(javafx.event.ActionEvent event){
+    private void BackHandler(javafx.event.ActionEvent event){                           // back to client page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../client/clientPage.fxml"));
         try {
@@ -143,7 +143,7 @@ public class SabadeKharidController {
 
 
     @FXML
-    private void DeleteSafaresh(){
+    private void DeleteSafaresh(){                                                       // delete item from sabadekharid
         Sefaresh selected = ListSabad.getSelectionModel().getSelectedItem();
         if(selected!=null){
             client.getSabadeKharid().remove(selected);

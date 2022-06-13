@@ -32,7 +32,7 @@ public class ChooseController {
         AddToList();
     }
 
-    public void AddToList(){
+    public void AddToList(){                                        // add all coffee restaurant to list
         RestList.getItems().clear();
         CoffeeList.getItems().clear();
         for (int i=0 ; i< Main.admin.getCoffees().size() ; i++){
@@ -47,7 +47,7 @@ public class ChooseController {
     @FXML
     public void handleC(MouseEvent click) {
 
-        if (click.getClickCount() == 2) {
+        if (click.getClickCount() == 2) {                                    // 2click item -> open edit page
             Coffee coffee = CoffeeList.getSelectionModel().getSelectedItem();
             EditCoffee(coffee);
         }
@@ -55,13 +55,13 @@ public class ChooseController {
     @FXML
     public void handleR(MouseEvent click) {
 
-        if (click.getClickCount() == 2) {
+        if (click.getClickCount() == 2) {                                                  // 2click item -> open edit page
             Restaurant restaurant = RestList.getSelectionModel().getSelectedItem();
             EditRest(restaurant);
         }
     }
 
-    private void EditCoffee(Coffee coffee){
+    private void EditCoffee(Coffee coffee){                          // Show Edit  coffee Page
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("EditPage.fxml"));
@@ -75,7 +75,7 @@ public class ChooseController {
         Stage.setScene(new Scene(loader.getRoot()));
     }
 
-    private void EditRest(Restaurant restaurant){
+    private void EditRest(Restaurant restaurant){                                   // Show Edit  restaurant Page
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("EditPage.fxml"));
@@ -91,7 +91,7 @@ public class ChooseController {
 
 
     @FXML
-    private void BackHandler(ActionEvent event){
+    private void BackHandler(ActionEvent event){                                  // back to Admin Page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Admin/AdminPage.fxml"));
         try {

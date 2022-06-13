@@ -51,10 +51,10 @@ public class SigninPageController {
             if(checkNumber(PhNumberFLD.getText()) && CheckEmail(EmailFLD.getText())){
                 Client client = new Client(NameFLD.getText(),LNameFLD.getText(),EmailFLD.getText(),PassFLD.getText(),PhNumberFLD.getText());
                 Main.Clientlist.add(client);
-                for (int i=0 ; i< Main.Clientlist.size() ; i++){
+                for (int i=0 ; i< Main.Clientlist.size() ; i++){                         // add client to list
                     System.out.print( Main.Clientlist.get(i)+"\n");
                 }
-                CodeMoaref();
+                CodeMoaref();                                                             // send code moaref to email
                 BackHandler(event);
 
 
@@ -65,7 +65,7 @@ public class SigninPageController {
     }
 
     @FXML
-    private void BackHandler(ActionEvent event){
+    private void BackHandler(ActionEvent event){                                  // back to start page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../StartPage/StartPage.fxml"));
         try {
@@ -78,7 +78,7 @@ public class SigninPageController {
         Stage.setScene(new Scene(loader.getRoot()));
     }
 
-private void CodeMoaref(){
+private void CodeMoaref(){                                                          // send code moaref
         if(!CodeMoaref.getText().isEmpty()){
             for (int i=0 ; i<Main.Takhfiflist.size() ; i++){
                 if(Main.Takhfiflist.get(i).getCodeMoaref().equals(CodeMoaref.getText())){

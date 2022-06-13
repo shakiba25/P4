@@ -38,7 +38,7 @@ public class DavatController {
         EmailFLD.clear();
     }
     @FXML
-    private void Ok(ActionEvent event){
+    private void Ok(ActionEvent event){                      // send code moaref to  email FLD
         if(!EmailFLD.getText().isEmpty()){
             if(CheckEmail(EmailFLD.getText())){
 
@@ -53,7 +53,7 @@ public class DavatController {
                 ErorTXT.setText("Ersal Shod !");
                 EmailFLD.clear();
 
-                //JavaMail Mail = new JavaMail( CodeMoaref ,EmailFLD.getText());
+                JavaMail Mail = new JavaMail( CodeMoaref ,EmailFLD.getText());             // send code moaref
 
             }else {ErorTXT.setText("Email Eshtebah Ast !");}
         }
@@ -91,7 +91,7 @@ public class DavatController {
         return check;
     }
     @FXML
-    private void BackHandler(javafx.event.ActionEvent event){
+    private void BackHandler(javafx.event.ActionEvent event){                    // back to clientpage
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../client/clientPage.fxml"));
         try {
@@ -108,7 +108,7 @@ public class DavatController {
     static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     static SecureRandom rnd = new SecureRandom();
 
-    String randomString(int len){
+    String randomString(int len){                                                       // create random code
         StringBuilder sb = new StringBuilder(len);
         for(int i = 0; i < len; i++)
             sb.append(AB.charAt(rnd.nextInt(AB.length())));

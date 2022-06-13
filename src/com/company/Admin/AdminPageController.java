@@ -19,7 +19,7 @@ public class AdminPageController {
     }
 
     @FXML
-    private void AddHAndler(ActionEvent event){
+    private void AddHAndler(ActionEvent event){                             // Add restaurant or coffeeshop page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../AddRC/AddPage.fxml"));
         try {
@@ -34,7 +34,7 @@ public class AdminPageController {
 
 
     @FXML
-    private void EditHandler(ActionEvent event){
+    private void EditHandler(ActionEvent event){                               // show choosepage for select item for edit
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../EditRC/ChoosePage.fxml"));
         try {
@@ -49,7 +49,7 @@ public class AdminPageController {
 
 
     @FXML
-    private void backHAndler(ActionEvent event){
+    private void backHAndler(ActionEvent event){                          // back to login page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Login/LoginPage.fxml"));
         try {

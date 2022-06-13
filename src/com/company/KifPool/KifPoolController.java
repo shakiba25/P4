@@ -38,7 +38,7 @@ public class KifPoolController {
         AddCodeTakhfif();
     }
 
-    private void AddCodeTakhfif(){
+    private void AddCodeTakhfif(){                                                 // add code takhfif to code list
         CodeTakhfifList.getItems().clear();
 
         for (int i = 0; i<Main.Takhfiflist.size() ; i++){
@@ -49,7 +49,7 @@ public class KifPoolController {
             }
         }
 
-        if(client.getKifPool()==null){
+        if(client.getKifPool()==null){                                             // set mojoodi
             MojoodiTXT.setText("Mojoodi : 0"   );
         }else {
             MojoodiTXT.setText("Mojoodi : " + client.getKifPool());
@@ -58,10 +58,12 @@ public class KifPoolController {
     }
 
     @FXML
-    private void ChargeBTN(ActionEvent e ){
+    private void ChargeBTN(ActionEvent e ){                                     //charge mojoodi kifpool
+
         if(!MablaghFLD.getText().isEmpty()){
         if(checkNumber(MablaghFLD.getText())){
             if(client.getKifPool()==null){
+
             int Mojoodi = 0;
             int Charge = Integer.parseInt(MablaghFLD.getText());
             client.setKifPool(String.valueOf(Mojoodi+Charge));
@@ -86,7 +88,7 @@ public class KifPoolController {
         return check2;
     }
     @FXML
-    private void BackHandler(ActionEvent event){
+    private void BackHandler(ActionEvent event){                                     // back to client page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../client/clientPage.fxml"));
         try {

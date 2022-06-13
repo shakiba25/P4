@@ -74,7 +74,7 @@ public class AddController {
     }
 
     @FXML
-    private void InfoNextHandle(ActionEvent event){
+    private void InfoNextHandle(ActionEvent event){    // save information and go to delivery information
 
         System.out.print(C.isSelected() + "\n");
         System.out.print(R.isSelected() + "\n");
@@ -87,9 +87,7 @@ public class AddController {
             }
         }else if(!C.isSelected() && R.isSelected()){
             if(CheckEmpty()){
-                System.out.print(C.isArmed() + "\n");
-                System.out.print(R.isArmed() + "\n");
-                System.out.print(CheckEmpty());
+
                 DeliveryTab.setDisable(false);
             }
         }else {
@@ -99,7 +97,7 @@ public class AddController {
     }
 
     @FXML
-    private void DelNextHandle(ActionEvent event){
+    private void DelNextHandle(ActionEvent event){                            // save all and add
         System.out.print("Save");
         System.out.print(CheckEmptyDel());
         System.out.print(CheckEmail(EmailDFLD.getText()));
@@ -141,7 +139,7 @@ public class AddController {
     }
 
     @FXML
-    private void BackHandler(ActionEvent event){
+    private void BackHandler(ActionEvent event){                                      // back to Admin page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Admin/AdminPage.fxml"));
         try {

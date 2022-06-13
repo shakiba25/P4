@@ -55,7 +55,7 @@ public class ClientPageController {
     }
 
     @FXML
-    private void NextBTNHandler(ActionEvent event){
+    private void NextBTNHandler(ActionEvent event){                                     // add all coffeeshop & restaurant in list
         if( !LocationFLD.getText().isEmpty()){
             CoffeeList.getItems().clear();
             RestList.getItems().clear();
@@ -97,7 +97,7 @@ public class ClientPageController {
         }
     }
 
-    private void SabtCoffee(Coffee coffee){
+    private void SabtCoffee(Coffee coffee){                                 // sabt sefaresh  coffee shop
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../SabtSefaresh/SabtSefareshPage.fxml"));
         try {
@@ -110,7 +110,7 @@ public class ClientPageController {
         stage.setScene(new Scene(loader.getRoot()));
     }
 
-    private void SabtRestaurant(Restaurant restaurant){
+    private void SabtRestaurant(Restaurant restaurant){                      // sabt sefaresh   restaurant
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../SabtSefaresh/SabtSefareshPage.fxml"));
         try {
@@ -122,21 +122,9 @@ public class ClientPageController {
         controller.initFunction(this.stage , this.client , restaurant , null  );
         stage.setScene(new Scene(loader.getRoot()));
     }
+
     @FXML
-    private void BackHAndler(ActionEvent event){
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../Login/LoginPage.fxml"));
-        try {
-            loader.load();
-        }catch (Exception e){
-            System.out.print(e.getMessage());
-        }
-        LoginPageController controller = loader.getController();
-        controller.initFunction(stage);
-        stage.setScene(new Scene(loader.getRoot()));
-    }
-    @FXML
-    private void SabadeKharid(ActionEvent event){
+    private void SabadeKharid(ActionEvent event){                   // show sabad kharid
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../SabadeKharid/SabadeKharid.fxml"));
         try {
@@ -150,7 +138,7 @@ public class ClientPageController {
     }
 
     @FXML
-    private void KifPool(ActionEvent event){
+    private void KifPool(ActionEvent event){                              // show kif pool
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../KifPool/KifPoolPage.fxml"));
         try {
@@ -163,7 +151,7 @@ public class ClientPageController {
         stage.setScene(new Scene(loader.getRoot()));
     }
     @FXML
-    private void DavatDosstan(ActionEvent event){
+    private void DavatDosstan(ActionEvent event){                       // davat az doostan
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Daavat/DavatPage.fxml"));
         try {
@@ -176,7 +164,7 @@ public class ClientPageController {
         stage.setScene(new Scene(loader.getRoot()));
     }
     @FXML
-    private void Sefareshat(ActionEvent event){
+    private void Sefareshat(ActionEvent event){                                // Sefareshat page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Sefareshat/Sefareshat.fxml"));
         try {
@@ -189,7 +177,7 @@ public class ClientPageController {
         stage.setScene(new Scene(loader.getRoot()));
     }
 
-    public void backHAndler(ActionEvent event) {
+    public void backHAndler(ActionEvent event) {                                 // back to login page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Login/LoginPage.fxml"));
         try {

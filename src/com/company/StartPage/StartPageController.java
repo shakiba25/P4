@@ -25,7 +25,7 @@ public class StartPageController {
 }
 
     @FXML
-    private void LoginHandler(ActionEvent event){
+    private void LoginHandler(ActionEvent event){                              //load loginPAge
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Login/LoginPage.fxml"));
@@ -41,7 +41,7 @@ public class StartPageController {
     }
 
     @FXML
-    private void SigninHandler(ActionEvent event){
+    private void SigninHandler(ActionEvent event){                       //load Sighnin Page
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Signin/SigninPage.fxml"));

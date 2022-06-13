@@ -46,7 +46,7 @@ public class SabtSefareshController {
         AddFClist();
     }
 
-    private void AddFClist(){
+    private void AddFClist(){                                      // add Foodcategory to list
         if(coffee!=null){
             FCList.getItems().clear();
             FCList.getItems().addAll(coffee.getFoodCategoryList());
@@ -66,12 +66,12 @@ public class SabtSefareshController {
 
         if (click.getClickCount() == 2) {
             FoodCategory selected = FCList.getSelectionModel().getSelectedItem();
-            AddFoodInList(selected);
+            AddFoodInList(selected);                                                    // openn list
 
         }
     }
 
-    private void AddFoodInList(FoodCategory foodCategory){
+    private void AddFoodInList(FoodCategory foodCategory){              // add foods of foodcetegory in food list
         Vbox.getChildren().clear();
         for (int i=0 ; i<foodCategory.getFoodList().size() ; i++ ){
             Food food = foodCategory.getFoodList().get(i);
@@ -84,7 +84,7 @@ public class SabtSefareshController {
 
             foodTextFlow.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
-                public void handle(MouseEvent mouseEvent) {
+                public void handle(MouseEvent mouseEvent) {                           // 2 click -> add to sabad kharid
                     if(mouseEvent.getButton().equals(MouseButton.PRIMARY)){
                         if(mouseEvent.getClickCount() == 2){
                             Sefaresh sefaresh = new Sefaresh(restaurant , coffee , food , client );
@@ -116,7 +116,7 @@ public class SabtSefareshController {
 
 
     @FXML
-    private void BackHandler(ActionEvent event){
+    private void BackHandler(ActionEvent event){                       // back to client Page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../client/clientPage.fxml"));
         try {

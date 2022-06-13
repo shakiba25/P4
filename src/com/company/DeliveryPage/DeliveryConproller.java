@@ -33,7 +33,7 @@ public class DeliveryConproller {
         this.delivery = delivery;
         Add();
     }
-    private void Add(){
+    private void Add(){                                                      // add sefareshat to admin page
         HelloTXT.setText("Hello " + delivery.getName());
         if(delivery.getListSefareshat()!=null){
         for (int i=0 ; i<delivery.getListSefareshat().size() ; i++){
@@ -69,7 +69,7 @@ public class DeliveryConproller {
     }
 
     @FXML
-    public void backHAndler(ActionEvent event) {
+    public void backHAndler(ActionEvent event) {                          // Back to login page
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Login/LoginPage.fxml"));
         try {
