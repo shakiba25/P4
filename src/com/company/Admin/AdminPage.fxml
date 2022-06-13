@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="641.0" prefWidth="600.0" style="-fx-background-color: #5F9EA0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Admin.AdminPageController">
+   <children>
+      <Pane layoutX="66.0" layoutY="81.0" prefHeight="479.0" prefWidth="468.0" style="-fx-background-color: #CFECEC; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="83.0" layoutY="66.0" prefHeight="31.0" prefWidth="314.0" text="Add Restaurant or CoffeeShop">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Button fx:id="AddBTN" layoutX="83.0" layoutY="119.0" mnemonicParsing="false" onAction="#AddHAndler" prefHeight="43.0" prefWidth="314.0" style="-fx-background-color: #307D7E;" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Button>
+            <Label layoutX="96.0" layoutY="265.0" prefHeight="31.0" prefWidth="314.0" text="Edit Restaurant or CoffeeShop">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Button fx:id="EditBTN" layoutX="83.0" layoutY="317.0" mnemonicParsing="false" onAction="#EditHandler" prefHeight="43.0" prefWidth="314.0" style="-fx-background-color: #307D7E;" text="Edit" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Label layoutX="173.0" layoutY="14.0" prefHeight="67.0" prefWidth="255.0" text="Admin Panel" textAlignment="RIGHT" textOverrun="CENTER_WORD_ELLIPSIS" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="41.0" />
+         </font>
+      </Label>
+      <Button fx:id="BackBTN" layoutX="275.0" layoutY="586.0" mnemonicParsing="false" onAction="#backHAndler" text="back" textFill="#0c5448" />
+   </children>
+</AnchorPane>

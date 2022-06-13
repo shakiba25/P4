@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="655.0" prefWidth="600.0" style="-fx-background-color: #FFA07A;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.Login.LoginPageController">
+   <children>
+      <Pane layoutX="90.0" layoutY="117.0" prefHeight="407.0" prefWidth="410.0" style="-fx-background-color: #D3D3D3; -fx-background-radius: 20;">
+         <children>
+            <Button fx:id="LoginBTN" layoutX="30.0" layoutY="284.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="351.0" style="-fx-background-color: #F88158;" text="Login" textFill="WHITE" onAction="#LoginBTNHandler">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <TextField fx:id="UserFLD" layoutX="78.0" layoutY="64.0" prefHeight="53.0" prefWidth="255.0" promptText="Username (email)" />
+            <TextField fx:id="PassFLD" layoutX="78.0" layoutY="137.0" prefHeight="53.0" prefWidth="255.0" promptText="Password" />
+         </children>
+      </Pane>
+      <Text layoutX="243.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" >
+         <font>
+            <Font name="System Bold Italic" size="40.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d5d6ea" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Button fx:id="BackBTN" layoutX="282.0" layoutY="610.0" mnemonicParsing="false" text="back" textFill="#ff5e5e"  onAction="#BackBTNHandler"/>
+   </children>
+</AnchorPane>
